@@ -14,9 +14,16 @@ jobs:
             - run:
                 name: pnpm
                 command: npm install pnpm -G
+            - restore_cache:
+                keys:
+                    - dependencies
             - run:
                 name: Install
-                command: yarn install
+                command: npm install
+            - save_cache:
+                paths:
+                    - node_modules
+                key: dependencies
             - run:
                 name: Build
-                command: yarn build
+                command: npm run build
