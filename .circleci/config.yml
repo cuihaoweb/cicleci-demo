@@ -1,21 +1,21 @@
-# @format
-
 version: 2
 jobs:
-    build:
-        docker:
-            - image: circleci/node:10
-        branches:
-            only:
-                - master
+    docker:
+        - image: circleci/node:10
+    branches:
+        only:
+            - master
         steps:
             - add_ssh_keys:
-				fingerprints:
-					- 'eb:24:28:93:f3:95:20:ee:7f:0a:3b:83:df:41:ca:a2'
+                fingerprints:
+                    - "eb:24:28:93:f3:95:20:ee:7f:0a:3b:83:df:41:ca:a2"
             - checkout
             - run:
+                name: pnpm
+                command: npm install pnpm -G
+            - run
                 name: Install
                 command: npm install
             - run:
                 name: Build
-                command: npm build
+                command: npm run build
