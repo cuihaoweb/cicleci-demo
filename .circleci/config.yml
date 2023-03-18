@@ -10,12 +10,15 @@ jobs:
                 - master
         steps:
             - add_ssh_keys:
-                  fingerprints:
-                      - 'eb:24:28:93:f3:95:20:ee:7f:0a:3b:83:df:41:ca:a2'
+				fingerprints:
+					- 'eb:24:28:93:f3:95:20:ee:7f:0a:3b:83:df:41:ca:a2'
             - checkout
+			- run:
+				name: Install pnpm
+				command: npm install pnpm -G
             - run:
-                  name: Install
-                  command: pnpm install
+                name: Install
+                command: pnpm install
             - run:
-                  name: Build
-                  command: pnpm build
+				name: Build
+				command: pnpm build
