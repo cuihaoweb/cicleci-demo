@@ -15,7 +15,7 @@ jobs:
             - checkout
             - run:
                   name: Install
-                  command: npm install
+                  command: pnpm install
             - run:
                   name: Build
-                  command: npm build
+                  command: pnpm build
