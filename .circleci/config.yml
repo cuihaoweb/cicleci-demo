@@ -13,7 +13,7 @@ jobs:
             - run:
                 name: pnpm
                 command: npm install pnpm -G
-            - run
+            - run:
                 name: Install
                 command: npm install
             - run:
