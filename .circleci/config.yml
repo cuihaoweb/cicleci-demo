@@ -16,7 +16,7 @@ jobs:
                 command: npm install pnpm -G
             - run:
                 name: Install
-                command: pnpm install
+                command: yarn install
             - run:
                 name: Build
-                command: pnpm run build
+                command: yarn build
